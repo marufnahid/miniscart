@@ -5,10 +5,11 @@
  * @package Miniscart
  */
 
+
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if ( ! is_active_sidebar( 'left-sidebar' ) ) {
+if ( ! is_active_sidebar( 'left-sidebar' ) || is_cart() || is_checkout() || is_account_page() || is_product()) {
 	return;
 }
 

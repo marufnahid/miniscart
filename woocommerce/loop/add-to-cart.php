@@ -26,7 +26,7 @@ global $product;
 echo apply_filters(
 	'woocommerce_loop_add_to_cart_link', // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	sprintf(
-		'<div class="product-wrap"><a href="%s" data-quantity="%s" class="%s product_type_%s button single_add_to_cart_button  %s" %s> %s </a></div>',
+		'<div class="product-wrap"><a href="%s" data-quantity="%s" class="%s product_type_%s button single_add_to_cart_button  %s" %s> <span type="button" data-toggle="tooltip" data-placement="top" title="%s"><i class="fa fa-shopping-basket"></i></span> </a></div>',
 		esc_url( $product->add_to_cart_url() ),
 		esc_attr( isset( $args['quantity'] ) ? $args['quantity'] : 1 ),
 		$product->is_purchasable() && $product->is_in_stock() ? 'add_to_cart_button' : '',
@@ -34,7 +34,6 @@ echo apply_filters(
 		$product->get_type() === 'simple' ? 'ajax_add_to_cart' : '',
 		isset( $args['attributes'] ) ? wc_implode_html_attributes( $args['attributes'] ) : '',
 		esc_html( $product->add_to_cart_text() ),
-		//'<i class="fa fa-shopping-basket"></i>',
 	),
 	$product,
 	$args

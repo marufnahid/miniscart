@@ -176,9 +176,9 @@ if ( ! class_exists( 'Miniscart_WP_Bootstrap_Navwalker' ) ) {
 			// Set title from item to the $atts array - if title is empty then
 			// default to item title.
 			if ( empty( $item->attr_title ) ) {
-				$atts['title'] = ! empty( $item->title ) ? strip_tags( $item->title ) : '';
+				//$atts['title'] = ! empty( $item->title ) ? strip_tags( $item->title ) : '';
 			} else {
-				$atts['title'] = $item->attr_title;
+				//$atts['title'] = $item->attr_title;
 			}
 
 			$atts['target'] = ! empty( $item->target ) ? $item->target : '';
@@ -195,7 +195,7 @@ if ( ! class_exists( 'Miniscart_WP_Bootstrap_Navwalker' ) ) {
 				$atts['data-bs-toggle'] = 'dropdown';
 				$atts['aria-haspopup']  = 'true';
 				$atts['aria-expanded']  = 'false';
-				$atts['class']          = 'dropdown-toggle nav-link';
+				$atts['class']          = 'dropdown-toggle';
 				$atts['id']             = 'menu-item-dropdown-' . $item->ID;
 			} else {
 				$atts['href'] = ! empty( $item->url ) ? $item->url : '#';
@@ -203,7 +203,7 @@ if ( ! class_exists( 'Miniscart_WP_Bootstrap_Navwalker' ) ) {
 				if ( $depth > 0 ) {
 					$atts['class'] = 'dropdown-item';
 				} else {
-					$atts['class'] = 'nav-link';
+					$atts['class'] = '';
 				}
 			}
 
@@ -301,6 +301,7 @@ if ( ! class_exists( 'Miniscart_WP_Bootstrap_Navwalker' ) ) {
 			 * END appending the internal item contents to the output.
 			 */
 			$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+
 
 		}
 

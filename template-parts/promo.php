@@ -9,7 +9,7 @@
 					<div class="container">
 						<div class="row justify-content-center align-items-center text-center">
 							<div class="col-md-8">
-                                <?php echo get_theme_mod('promo_editor_setting');?>
+                                <?php echo esc_html(get_theme_mod('promo_editor_setting'));?>
 							</div>
 						</div>
 					</div>

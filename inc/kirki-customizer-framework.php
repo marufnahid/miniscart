@@ -363,4 +363,177 @@ if ( class_exists( 'Kirki' ) ) {
 		]
 	);
 
+	new \Kirki\Section(
+		'about_us_settings',
+		[
+			'title'    => esc_html__( 'About Us Settings', 'kirki' ),
+			'panel'    => 'miniscart_settings',
+		]
+	);
+
+	new \Kirki\Field\Checkbox_Switch(
+		[
+			'settings' => 'team_title_switch',
+			'label'    => esc_html__( 'Team Title Switch', 'kirki' ),
+			'section'  => 'about_us_settings',
+			'default'  => 'on',
+			'choices'  => [
+				'on'  => esc_html__( 'Show', 'kirki' ),
+				'off' => esc_html__( 'Hide', 'kirki' ),
+			],
+		]
+	);
+
+	new \Kirki\Field\Text(
+		[
+			'settings'        => 'team_title',
+			'label'           => esc_html__( 'Team Title', 'kirki' ),
+			'section'         => 'about_us_settings',
+			'default'         => esc_html__( 'Meet our golden team', 'kirki' ),
+			'active_callback' => [
+				[
+					'setting'  => 'team_title_switch',
+					'operator' => '==',
+					'value'    => true,
+				]
+			],
+		]
+	);
+
+	new \Kirki\Field\Textarea(
+		[
+			'settings'        => 'team_subtitle',
+			'label'           => esc_html__( 'Team Subtitle', 'kirki' ),
+			'section'         => 'about_us_settings',
+			'default'         => esc_html__( 'Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet', 'kirki' ),
+			'active_callback' => [
+				[
+					'setting'  => 'team_title_switch',
+					'operator' => '==',
+					'value'    => true,
+				]
+			],
+		]
+	);
+
+	new \Kirki\Field\Repeater(
+		[
+			'settings' => 'team_repeater_setting',
+			'label'    => esc_html__( ' Team Members', 'kirki' ),
+			'section'  => 'about_us_settings',
+			'default'  => [
+				[
+					'members_name'   => esc_html__('Jhon Doe','kirki'),
+					'members_designation'   => esc_html__('Web Developer','kirki'),
+				],
+				[
+					'members_name'   => esc_html__('Devid Doe','kirki'),
+					'members_designation'   => esc_html__('UI Developer','kirki'),
+				],
+				[
+					'members_name'   => esc_html__('Jhon Doe','kirki'),
+					'members_designation'   => esc_html__('AI Designer','kirki'),
+				],
+			],
+			'fields'   => [
+				'members_name'   => [
+					'type'        => 'text',
+					'label'       => esc_html__( 'Members Name', 'kirki' ),
+					'default'     => esc_html__('Jhon Doe','kirki'),
+				],
+				'members_designation'   => [
+					'type'        => 'text',
+					'label'       => esc_html__( 'Members Designation', 'kirki' ),
+					'default'     => esc_html__('Web Developer','kirki'),
+				],
+				'team_image' => [
+					'type'        => 'image',
+					'label'       => esc_html__( 'Image', 'kirki' ),
+					'default'     => '',
+				],
+			],
+		]
+	);
+
+	new \Kirki\Field\Checkbox_Switch(
+		[
+			'settings' => 'goal_title_switch',
+			'label'    => esc_html__( 'Team Title Switch', 'kirki' ),
+			'section'  => 'about_us_settings',
+			'default'  => 'on',
+			'choices'  => [
+				'on'  => esc_html__( 'Show', 'kirki' ),
+				'off' => esc_html__( 'Hide', 'kirki' ),
+			],
+		]
+	);
+
+	new \Kirki\Field\Text(
+		[
+			'settings'        => 'goal_title',
+			'label'           => esc_html__( 'Goal Title', 'kirki' ),
+			'section'         => 'about_us_settings',
+			'default'         => esc_html__( 'We create Woo-Commerce Solution', 'kirki' ),
+			'active_callback' => [
+				[
+					'setting'  => 'goal_title_switch',
+					'operator' => '==',
+					'value'    => true,
+				]
+			],
+		]
+	);
+
+	new \Kirki\Field\Textarea(
+		[
+			'settings'        => 'goal_subtitle',
+			'label'           => esc_html__( 'Goal Subtitle', 'kirki' ),
+			'section'         => 'about_us_settings',
+			'default'         => esc_html__( 'Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet', 'kirki' ),
+			'active_callback' => [
+				[
+					'setting'  => 'goal_title_switch',
+					'operator' => '==',
+					'value'    => true,
+				]
+			],
+		]
+	);
+
+	new \Kirki\Field\Repeater(
+		[
+			'settings' => 'goal_repeater_setting',
+			'label'    => esc_html__( 'Goal Repeater', 'kirki' ),
+			'section'  => 'about_us_settings',
+			'default'  => [
+				[
+					'mission_title'   => esc_html__('Our Mission','kirki'),
+					'mission_description'   => esc_html__('orem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid asperiores, blanditiis cum eveniet ipsum itaque magni minus odio qui.','kirki'),
+				],
+				[
+					'mission_title'   => esc_html__('Our Vision','kirki'),
+					'mission_description'   => esc_html__('orem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid asperiores, blanditiis cum eveniet ipsum itaque magni minus odio qui.','kirki'),
+				],
+				[
+					'mission_title'   => esc_html__('Our Goal','kirki'),
+					'mission_description'   => esc_html__('orem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam aliquid asperiores, blanditiis cum eveniet ipsum itaque magni minus odio qui.','kirki'),
+				],
+			],
+			'fields'   => [
+				'mission_title'   => [
+					'type'        => 'text',
+					'label'       => esc_html__( 'Title', 'kirki' ),
+					'default'     => esc_html__('Our Mission','kirki'),
+				],
+				'mission_description'   => [
+					'type'        => 'text',
+					'label'       => esc_html__( 'Description', 'kirki' ),
+					'default'     => esc_html__('Your Text','kirki'),
+				],
+			],
+		]
+	);
+
+
+
 }

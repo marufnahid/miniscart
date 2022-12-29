@@ -24,12 +24,14 @@ do_action( 'woocommerce_before_account_navigation' );
 ?>
 
 <nav class="woocommerce-MyAccount-navigation" role="navigation">
-	<div class="list-group">
-			<?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>
-				<a href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>"
-					class="list-group-item list-group-item-action"><?php echo esc_html( $label ); ?></a>
-			<?php endforeach; ?>
-	</div>
+    <ul>
+	    <?php foreach ( wc_get_account_menu_items() as $endpoint => $label ) : ?>
+        <li class="woocommerce-MyAccount-navigation-link woocommerce-MyAccount-navigation-link--<?php echo esc_html($endpoint);?>">
+            <a href="<?php echo esc_url( wc_get_account_endpoint_url( $endpoint ) ); ?>"
+               class="list-group-item list-group-item-action"><?php echo esc_html( $label ); ?></a>
+        </li>
+	    <?php endforeach; ?>
+    </ul>
 </nav>
 
 <?php

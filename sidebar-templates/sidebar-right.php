@@ -10,10 +10,11 @@ if(is_shop()){
 }else{
     $miniscart_sidebar = 'right-sidebar';
 }
+
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-if ( ! is_active_sidebar( $miniscart_sidebar ) || is_cart() || is_checkout() ) {
+if ( ! is_active_sidebar( $miniscart_sidebar ) || is_cart() || is_checkout() || is_account_page() || is_product() ) {
 	return;
 }
 

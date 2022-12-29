@@ -10,7 +10,7 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 
-$bootstrap_version = get_theme_mod( 'miniscart_bootstrap_version', 'bootstrap4' );
+$bootstrap_version = get_theme_mod( 'miniscart_bootstrap_version', 'bootstrap5' );
 $navbar_type       = get_theme_mod( 'miniscart_navbar_type', 'collapse' );
 ?>
 <!DOCTYPE html>
@@ -27,10 +27,14 @@ $navbar_type       = get_theme_mod( 'miniscart_navbar_type', 'collapse' );
 <div class="site" id="page">
 
 	<!-- ******************* The Navbar Area ******************* -->
-	<header id="wrapper-navbar">
+	<header id="wrapper-navbar" class="app-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'miniscart' ); ?></a>
 
-		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'miniscart' ); ?></a>
-
-		<?php get_template_part( 'global-templates/navbar', $navbar_type . '-' . $bootstrap_version ); ?>
-
+	                <?php get_template_part( 'global-templates/navbar', $navbar_type . '-' . $bootstrap_version ); ?>
+                </div>
+            </div>
+        </div>
 	</header><!-- #wrapper-navbar end -->

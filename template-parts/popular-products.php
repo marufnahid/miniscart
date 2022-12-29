@@ -14,7 +14,7 @@
 
 			<div class="col-md-12">
 				<ul class="products columns-3">
-					<?php echo do_shortcode('[products columns="3" per_page="3" orderby="comment_count" order="ASC"]' )?>
+					<?php echo do_shortcode('[products columns="3" per_page="3" orderby="popularity" order="ASC"]' )?>
 				</ul>
 			</div>
 

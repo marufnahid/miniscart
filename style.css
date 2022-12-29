@@ -29,12 +29,12 @@ Do not modify the parent Miniscart theme. Instead, download a copy of the Minisc
 Full developer documentation: https://docs.miniscart.com
 */
 
-.woocommerce ul.products li.product .product-wrap {
-    position: absolute;
-    bottom: 97px;
-    right: 0;
-    left: 0;
-}
+/*.woocommerce ul.products li.product .product-wrap {*/
+/*    position: absolute;*/
+/*    bottom: 97px;*/
+/*    right: 0;*/
+/*    left: 0;*/
+/*}*/
 
 .social-links a i {
     font-style: normal;
@@ -79,14 +79,31 @@ Full developer documentation: https://docs.miniscart.com
 .woocommerce ul.products li.product h3 {
     font-weight: 600;
     color: #242424;
+    font-size: 20px;
+    transition: all .3s ease-in-out;
+}
+.woocommerce ul.products li.product .woocommerce-loop-product__title:hover {
+    color: #ff5f5f;
 }
 
-.woocommerce ul.products li.product > a {
-    border: 1px solid #e8e8e8;
+.woocommerce ul.products li.product .star-rating {
+    margin-top: 5px;
+    float: right;
+    color: #ff5f5f;
+}
+
+.woocommerce ul.products[class*='columns-'] li.product-category,
+.woocommerce ul.products[class*='columns-'] li.product {
+    text-align: left;
+}
+
+.woocommerce ul.products li.product .price {
+    font-size: 18px;
+    color: red;
+    display: inline-block;
 }
 
 .woocommerce ul.products li.product .product-wrap .button {
-    right: 1px;
     border-radius: .4rem 0 0 0;
 }
 
@@ -176,4 +193,42 @@ Full developer documentation: https://docs.miniscart.com
 
 .woocommerce .shipping-calculator-button {
     color: #ff5f5f;
+}
+
+.select2-container--default .select2-selection--single {
+    border: 1px solid #e8e8e8;
+    padding: 5px 0;
+    height: 40px;
+}
+.woocommerce a.woocommerce-privacy-policy-link {
+    text-decoration:none !important;
+}
+
+.woocommerce-MyAccount-navigation-link .list-group-item {
+    border: none;
+    border-bottom: 1px solid #e8e8e8;
+}
+
+.woocommerce form .form-row select, .woocommerce-page form .form-row select.state_select {
+    height: 40px;
+    border: 1px solid #e8e8e8;
+}
+
+.woocommerce form.woocommerce-EditAccountForm .password-input,
+.woocommerce form.woocommerce-form-login .password-input ,
+.woocommerce form.woocommerce-form-register .password-input{
+    width: 100%;
+}
+
+.lost_password a {
+    text-decoration: none !important;
+}
+
+.app-header .navbar-nav .nav-item .nav-link,
+.app-header .navbar-nav .nav-item .dropdown-item {
+    color: inherit;
+}
+
+.mainmenu .collapse ul ul {
+    top: 30px;
 }
